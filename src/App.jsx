@@ -1,4 +1,5 @@
 import './index.css';
+import CursorGlow from './components/CursorGlow';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import Problem from './components/Problem';
@@ -14,6 +15,7 @@ import Footer from './components/Footer';
 function App() {
   return (
     <>
+      <CursorGlow />
       <Navbar />
       <Hero />
       <Problem />

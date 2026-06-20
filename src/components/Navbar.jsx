@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import logo from '../assets/light.png';
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
@@ -18,15 +19,7 @@ export default function Navbar() {
         }`}
       >
         {/* Logo */}
-        <div className="flex items-center gap-2.5">
-          <div className="w-7 h-7 rounded-lg bg-primary flex items-center justify-center shrink-0">
-            <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
-              <path d="M2 10.5 Q2 4 7 2 Q12 4 12 10.5" stroke="white" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" fill="none"/>
-              <circle cx="7" cy="10.5" r="1.5" fill="white"/>
-            </svg>
-          </div>
-          <span className="font-bold text-primary text-[15px] tracking-tight">CrescenFlow</span>
-        </div>
+        <img src={logo} alt="CrescenFlow" className="h-7 w-auto" />
 
         {/* Nav links — desktop only */}
         <div className="hidden md:flex items-center gap-6">

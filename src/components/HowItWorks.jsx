@@ -36,6 +36,8 @@ const cardVariants = {
   visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: [0.22, 1, 0.36, 1] } },
 };
 
+const hoverLight = { y: -5, boxShadow: '0 16px 40px rgba(36,53,42,0.10)', transition: { duration: 0.22 } };
+
 export default function HowItWorks() {
   return (
     <section id="how-it-works" className="bg-white py-14 md:py-24 lg:py-32 px-6 md:px-12 lg:px-20 border-t border-border">
@@ -56,7 +58,6 @@ export default function HowItWorks() {
           </h2>
         </motion.div>
 
-        {/* Bento grid */}
         <motion.div
           variants={containerVariants}
           initial="hidden"
@@ -64,9 +65,9 @@ export default function HowItWorks() {
           viewport={{ once: true, margin: '-60px' }}
           className="mt-12 grid grid-cols-1 md:grid-cols-3 gap-4"
         >
-          {/* 01 — large (col-span-2) */}
-          <motion.div variants={cardVariants} className="md:col-span-2 bg-white border border-border rounded-2xl p-6 md:p-10 flex flex-col gap-5 min-h-[200px] md:min-h-[260px] shadow-sm">
-            <span className="inline-flex items-center justify-center w-9 h-9 rounded-xl border border-border text-xs font-semibold text-accent bg-gray-50">
+          {/* 01 — large */}
+          <motion.div variants={cardVariants} whileHover={hoverLight} className="md:col-span-2 bg-white border border-border rounded-2xl p-6 md:p-10 flex flex-col gap-5 min-h-[200px] md:min-h-[260px] shadow-sm cursor-default">
+            <span className="inline-flex items-center justify-center w-9 h-9 rounded-xl border border-border text-xs font-semibold text-accent bg-[#EEE7DF]/40">
               01
             </span>
             <div>
@@ -76,8 +77,8 @@ export default function HowItWorks() {
           </motion.div>
 
           {/* 02 — small */}
-          <motion.div variants={cardVariants} className="bg-white border border-border rounded-2xl p-6 md:p-10 flex flex-col gap-5 min-h-[200px] md:min-h-[260px] shadow-sm">
-            <span className="inline-flex items-center justify-center w-9 h-9 rounded-xl border border-border text-xs font-semibold text-accent bg-gray-50">
+          <motion.div variants={cardVariants} whileHover={hoverLight} className="bg-white border border-border rounded-2xl p-6 md:p-10 flex flex-col gap-5 min-h-[200px] md:min-h-[260px] shadow-sm cursor-default">
+            <span className="inline-flex items-center justify-center w-9 h-9 rounded-xl border border-border text-xs font-semibold text-accent bg-[#EEE7DF]/40">
               02
             </span>
             <div>
@@ -87,8 +88,8 @@ export default function HowItWorks() {
           </motion.div>
 
           {/* 03 — small */}
-          <motion.div variants={cardVariants} className="bg-white border border-border rounded-2xl p-6 md:p-10 flex flex-col gap-5 min-h-[200px] md:min-h-[260px] shadow-sm">
-            <span className="inline-flex items-center justify-center w-9 h-9 rounded-xl border border-border text-xs font-semibold text-accent bg-gray-50">
+          <motion.div variants={cardVariants} whileHover={hoverLight} className="bg-white border border-border rounded-2xl p-6 md:p-10 flex flex-col gap-5 min-h-[200px] md:min-h-[260px] shadow-sm cursor-default">
+            <span className="inline-flex items-center justify-center w-9 h-9 rounded-xl border border-border text-xs font-semibold text-accent bg-[#EEE7DF]/40">
               03
             </span>
             <div>
@@ -97,8 +98,12 @@ export default function HowItWorks() {
             </div>
           </motion.div>
 
-          {/* 04 — large (col-span-2), green accent card */}
-          <motion.div variants={cardVariants} className="md:col-span-2 bg-primary rounded-2xl p-10 flex flex-col gap-6 min-h-[260px]">
+          {/* 04 — large, green accent */}
+          <motion.div
+            variants={cardVariants}
+            whileHover={{ y: -5, boxShadow: '0 16px 40px rgba(36,53,42,0.25)', transition: { duration: 0.22 } }}
+            className="md:col-span-2 bg-primary rounded-2xl p-10 flex flex-col gap-6 min-h-[260px] cursor-default"
+          >
             <span className="inline-flex items-center justify-center w-9 h-9 rounded-xl border border-white/20 text-xs font-semibold text-white/60">
               04
             </span>
