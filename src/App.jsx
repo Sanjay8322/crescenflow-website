@@ -1,3 +1,4 @@
+import { Routes, Route } from 'react-router-dom';
 import './index.css';
 import CursorGlow from './components/CursorGlow';
 import Navbar from './components/Navbar';
@@ -11,8 +12,9 @@ import FAQ from './components/FAQ';
 import FinalCTA from './components/FinalCTA';
 import Booking from './components/Booking';
 import Footer from './components/Footer';
+import CaseStudy from './pages/CaseStudy';
 
-function App() {
+function LandingPage() {
   return (
     <>
       <CursorGlow />
@@ -28,6 +30,15 @@ function App() {
       <Booking />
       <Footer />
     </>
+  );
+}
+
+function App() {
+  return (
+    <Routes>
+      <Route path="/" element={<LandingPage />} />
+      <Route path="/case-study" element={<CaseStudy />} />
+    </Routes>
   );
 }
 

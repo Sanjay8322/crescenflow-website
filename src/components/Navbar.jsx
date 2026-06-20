@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 import logo from '../assets/light.png';
 
 export default function Navbar() {
